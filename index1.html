@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Musafir Travel-1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            font-family: 'Nunito', sans-serif;
+        }
+         /* header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+        } */
+
+        /* .logo-text {
+            color: white;
+        } */
+        /* .logo1{
+            display: flex;
+            align-items: center;
+            gap: 5em;
+         }  */
+
+         .hamburger-icon1 {
+            border: none;
+            background-color: transparent;
+        }
+
+        .hamburger-icon1 .fa-bars,
+        .hamburger-icon1 #x-icon {
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hamburger-icon1 #dropdown1 {
+            appearance: none;
+        }
+        .hamburger-icon1 {
+            display: none;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+       
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2% 9%;
+            box-shadow: 1px 0px 5px gray;
+        }
+
+        header .logo {
+            font-size: 2em;
+            font-weight: bolder;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        header .logo span {
+            color: orange;
+        }
+
+        header .navbar a {
+            color: #fff;
+            font-size: 19px;
+            margin: 0.8rem;
+
+        }
+
+        header .navbar a:hover {
+            color: orange;
+        }
+
+        header .icons i {
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 2rem;
+        }
+
+        header .icons i:hover {
+            color: orange;
+        }
+
+        header .search-bar-container {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background-color: #333;
+            border-top: .1rem solid rgba(255, 255, 255, .2);
+
+        }
+
+        header .search-bar-container #search-bar {
+            width: 100%;
+            padding: 1%;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+
+        .hamburger-icon {
+            border: none;
+            background-color: transparent;
+        }
+
+
+        .hamburger-icon #x-icon1 {
+            display: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hamburger-icon #dropdown {
+            appearance: none;
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) .search-bar-container {
+            display: block;
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) .fa-magnifying-glass {
+            display: none;
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) #x-icon1 {
+            display: inline-block;
+        }
+
+
+        @media screen and (max-width: 1100px) {
+            header {
+               align-items: flex-start;
+            }
+
+            .navbar {
+                height: 0;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .hamburger-icon1 {
+                display: block;
+            }
+
+            #x-icon {
+                display: none;
+            }
+
+            header:has(.hamburger-icon1 #dropdown1:checked) .navbar {
+                text-align: center;
+                width: auto;
+                margin-top: 4em;
+                height: 400px;
+            }
+
+            header:has(.hamburger-icon  #dropdown1:checked) .fa-bars {
+                display: none;
+            }
+
+            header:has(.hamburger-icon  #dropdown1:checked) #x-icon {
+                display: inline-block;
+            }
+            #login-btn{
+                display: none;
+            }
+
+        }
+        .heading {
+            text-align: center;
+           
+        }
+
+        .heading span {
+            line-height: 6em;
+            font-size: x-large;
+            font-weight: bolder;
+            color: orange;
+            background-color: rgba(255, 165, 0, .2);
+            border-radius:.5rem;
+            padding: 1rem 1rem;
+        }
+
+        .heading span.space {
+            background: none;
+        }
+        .box-container1{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .box{
+            /* flex: 1 1 30rem; */
+            width: 400px;
+            border-radius: .5rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .box i{
+            font-size: 5rem;
+            color: orange;
+            margin-bottom: 10px;
+        }
+        .box h3{
+            font-family: cursive;
+            font-size: 2rem;
+            color: #333;
+        }
+        .box p{
+            font-size: 1rem;
+            color:#666;
+            padding: 1rem;
+        }
+        .box:hover{
+            box-shadow: 0 2rem 2rem rgba(0, 0, 0, .2);
+        }
+        .box-container2 button {
+            border: 1px solid;
+            padding: 13px;
+            color: #fff;
+            background-color: orange;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-left: 13px;
+        }
+
+        .box-container2 button:hover {
+            box-shadow: 0 0 1rem rgba(248, 246, 246, 0.5);
+            /* background-color: #ffa50069;
+            color: orange; */
+        }
+        .box-container2{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 5em;
+        }
+        .card{
+            overflow: hidden;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+            border: 1rem solid #fff;
+            border-radius: .5rem;
+            width: 380px;
+            height: 20rem;
+            position: relative;
+        }
+        .card img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .content{
+            position: absolute;
+            top: -100%; 
+            left: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, .7);
+            padding: 5rem;
+            padding-top: 5rem;
+        }
+        .card:hover .content{
+            top: 0;
+        }
+        .content h3{
+            font-size: 1.5rem;
+            color: orange;
+            font-family: cursive;
+        }
+        .content p{
+            color: #eee;
+            padding: .5rem 0;
+        }
+        .video{
+            display: flex;
+            justify-content: center;
+            gap: 3em;
+            flex-wrap: wrap;
+        }
+        .video video{
+            width: 16em;
+            height: 65vh;
+            border-radius: 20px;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .4);
+            margin-bottom: 50px;
+
+        }
+        .footer{
+            background-color: #333;
+            padding-left: 4rem;
+        }
+         .box-container3{
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+        } 
+        .box1{
+            padding: 1rem 0;
+            width: 100%;
+        }
+        .box1 h3{
+            color:#fff;
+            padding: 10px 0;
+        }
+        .box1 p{
+            color: #eee;
+            padding: 10px 0;
+            line-height: 1.5;
+        }
+        .box1 a{
+            display: block;
+            color: #eee;
+            padding: 10px 0;
+        }
+        .box1 a:hover{
+            color: orange;
+            text-decoration: underline;
+        }
+        .banner-img{
+            background-image: url("https://img.freepik.com/premium-photo/jungle-landscape-aesthetic-background_1170794-465038.jpg?ga=GA1.1.165057042.1710773592&semt=ais_hybrid");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            background-color: #0009;
+            animation: enter-animation 1.6s 1;
+        }
+        .banner p{
+            padding: 10px;
+        }
+        .banner button{
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: orange ;
+            color: #fff;
+            border: 1px solid;
+        }
+        .banner button:hover {
+            /* box-shadow: 0 0 1rem rgba(0, 0, 0, .5); */
+            box-shadow: 0 0 1rem #fff;
+            /* background-color: #ffa50069;
+            color: orange; */
+        }
+    
+        @keyframes enter-animation {
+        0%{
+         transform: translateY(300px);
+         opacity: 0;
+
+        }
+        100%{
+          transform: translateY(0);
+          opacity: 1;
+
+        }
+        }
+        @media only screen and (max-width:1000px){
+        .box-container3 {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           font-size: 30px;
+        }
+        }
+        @media only screen and (max-width:540px){
+        .box-container3 {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           font-size: 20px;
+        }
+        }
+        @media only screen and (max-width:480px){
+        .heading span {
+            line-height: 7em;
+            font-size: 13px;
+        }
+        .box-container3 {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><span>T</span>ravel</a>
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="index.html">book</a>
+            <a href="index.html">packages</a>
+            <a href="#services">services</a>
+            <a href="#gallery">gallery</a>
+            <a href="index.html">contact</a>
+        </nav>
+        <div class="icons">
+            <button class="hamburger-icon">
+                <label for="dropdown">
+                    <i class="fa-solid fa-magnifying-glass" id="search-btn"></i>
+                    <i class="fa-solid fa-x" id="x-icon1"></i>
+                </label>
+                <input type="checkbox" id="dropdown" />
+            </button>
+            <a href="index2.html"><i class="fa-solid fa-user" id="login-btn"></i></a>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+        </form>
+        <button class="hamburger-icon1">
+            <label for="dropdown1">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-x" id="x-icon"></i>
+            </label>
+            <input type="checkbox" id="dropdown1" />
+        </button> 
+    </header>
+
+    <div class="banner-img">
+        <div class="banner">
+        <h1>TRAVEL</h1>
+        <P>Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip.</P>
+        <button>Explore</button>
+        </div>
+    </div>
+    <div class="services" id="services">
+        <div class="heading">
+            <span>s</span>
+            <span>e</span>
+            <span>r</span>
+            <span>v</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+            <span>s</span>
+        </div>
+        <div class="box-container1">
+            <div class="box">
+                <i class="fa-solid fa-hotel"></i>
+                <h3>affordable hotels</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur porro quas, repellendus consectetur veritatis sequi qui? Eos, optio nulla!</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>food and drinks</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur porro quas, repellendus consectetur veritatis sequi qui? Eos, optio nulla!</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h3>safety and guide</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur porro quas, repellendus consectetur veritatis sequi qui? Eos, optio nulla!</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-globe-asia"></i>
+                <h3>around the world</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur porro quas, repellendus consectetur veritatis sequi qui? Eos, optio nulla!</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-plane"></i>
+                <h3>fastest travel</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur porro quas, repellendus consectetur veritatis sequi qui? Eos, optio nulla!</p>
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-hiking"></i>
+                <h3>adventures</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur porro quas, repellendus consectetur veritatis sequi qui? Eos, optio nulla!</p>
+            </div>
+        </div>
+    </div>
+    <div class="gallery" id="gallery">
+        <div class="heading" id="head">
+            <span>g</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>e</span>
+            <span>r</span>
+            <span>y</span>
+        </div>
+        <div class="box-container2">
+            <div class="card">
+                <img src="gallery-img1.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img2.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img3.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img4.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img5.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img6.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img7.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img8.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gallery-img9.jpg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, id.</p>
+                    <button>see more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="video">
+           <video src="video-1.mp4" controls muted autoplay></video>
+           <video src="video-3.mp4" controls muted autoplay></video>
+           <video src="video-2.mp4" controls muted autoplay></video>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="box-container3">
+            <div class="box1">
+                <h3>about us</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nesciunt impedit dolorem voluptatum exercitationem veritatis vero quam autem corporis qui!</p>
+            </div>
+            <div class="box1">
+                <h3>branch location</h3>
+                <a href="#">india</a>
+                <a href="#">USA</a>
+                <a href="#">japan</a>
+                <a href="#">france</a>
+            </div>
+            <div class="box1">
+                <h3>quick links</h3>
+                <a href="index.html">home</a>
+                <a href="index.html">book</a>
+                <a href="index.html">packages</a>
+                <a href="#services">services</a>
+                <a href="#gallery">gallery</a>
+                <a href="index.html">contact</a>
+            </div>
+            <div class="box1">
+                <h3>follow us</h3>
+                <a href="https://facebook.com"target="_blank">facebook</a>
+                <a href="https://instagram.com"target="_blank">instagram</a>
+                <a href="https://twitter.com"target="_blank">twitter</a>
+                <a href="https://linkedin.com"target="_blank">linkedin</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

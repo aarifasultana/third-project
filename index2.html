@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-Musafir Travel-2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            font-family: "poppins", sans-serif;
+        }
+
+        .hamburger-icon1 {
+            border: none;
+            background-color: transparent;
+        }
+
+        .hamburger-icon1 .fa-bars,
+        .hamburger-icon1 #x-icon {
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .hamburger-icon1 #dropdown1 {
+            appearance: none;
+        }
+
+        .hamburger-icon1 {
+            display: none;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2% 9%;
+            box-shadow: 1px 0px 5px gray;
+        }
+
+        header .logo {
+            font-size: 2em;
+            font-weight: bolder;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        header .logo span {
+            color: orange;
+        }
+
+        header .navbar a {
+            color: #fff;
+            font-size: 19px;
+            margin: 0.8rem;
+
+        }
+
+        header .navbar a:hover {
+            color: orange;
+        }
+
+        header .icons i {
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 2rem;
+        }
+
+        header .icons i:hover {
+            color: orange;
+        }
+
+        header .search-bar-container {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            background-color: #333;
+            border-top: .1rem solid rgba(255, 255, 255, .2);
+
+        }
+
+        header .search-bar-container #search-bar {
+            width: 100%;
+            padding: 1%;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+
+        .hamburger-icon {
+            border: none;
+            background-color: transparent;
+        }
+        .hamburger-icon #x-icon1 {
+            display: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .hamburger-icon #x-icon1:hover{
+            color: orange;
+        }
+
+        .hamburger-icon #dropdown {
+            appearance: none;
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) .search-bar-container {
+            display: block;
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) .fa-magnifying-glass {
+            display: none;
+        }
+
+        header:has(.hamburger-icon #dropdown:checked) #x-icon1{
+            display: inline-block;
+        }
+
+
+        @media screen and (max-width: 1100px) {
+            header {
+               align-items: flex-start;
+            }
+
+            .navbar {
+                height: 0;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .hamburger-icon1 {
+                display: block;
+            }
+
+            #x-icon {
+                display: none;
+            }
+
+            header:has(.hamburger-icon1 #dropdown1:checked) .navbar {
+                text-align: center;
+                width: auto;
+                margin-top: 4em;
+                height: 400px;
+            }
+
+            header:has(.hamburger-icon  #dropdown1:checked) .fa-bars {
+                display: none;
+            }
+
+            header:has(.hamburger-icon  #dropdown1:checked) #x-icon {
+                display: inline-block;
+            }
+            #login-btn{
+                display: none;
+            }
+
+        }
+        .container1{
+            /* margin-top: 9em; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background:url("https://www.shutterstock.com/image-illustration/modern-airport-waiting-area-flyinf-600nw-1444797164.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            width: 35%;
+            background: #0009;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #fff;
+            padding: 30px 40px;
+            margin-top: 7em;
+        }
+        .container h1{
+        font-size: 36px;
+        text-align: center;
+    }
+    .container  .bdn{
+        position:relative;
+        width: 100%;
+        /* padding: 1em; */
+        margin: 30px 0; 
+    }
+    .bdn input{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 40px;
+        font-size: 16px;
+        color: #fff;
+        padding: 20px 45px 20px 20px;
+    }
+    .bdn input::placeholder{
+        color: #fff;
+    }
+    .bdn i{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+    .container .input-bdn{
+        justify-content: space-between;
+        font-size: 14.5px;
+        margin: 10px 0 15px 5px;
+    }
+    .input-bdn label input{
+        accent-color: #fff;
+        margin-right: 3px;
+    }
+    .input-bdn a{
+        color: #fff;
+       text-decoration: none;
+       margin-left: 2em;
+    }
+    .input-bdn a:hover{
+        text-decoration: underline;
+
+    }
+    .container .btn{
+        width: 100%;
+        height: 45px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+    }
+    .container .register-link{
+        font-size: 14.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+    }
+    .register-link p a{
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .register-link p a:hover{
+        text-decoration: underline;
+    }
+
+    .footer{
+            background-color: #333;
+            padding-left: 8rem;
+        }
+        .box-container1{
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+        .box1{
+            padding: 1rem 0;
+            flex: 1 1 25rem;
+        }
+        .box1 h3{
+            color:#fff;
+            padding: 10px 0;
+        }
+        .box1 p{
+            color: #eee;
+            padding: 10px 0;
+            line-height: 1.5;
+        }
+        .box1 a{
+            display: block;
+            color: #eee;
+            padding: 10px 0;
+        }
+        .box1 a:hover{
+            color: orange;
+            text-decoration: underline;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo"><span>T</span>ravel</a>
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="index.html">book</a>
+            <a href="index.html">packages</a>
+            <a href="index1.html">services</a>
+            <a href="index1.html">gallery</a>
+            <a href="index.html">contact</a>
+        </nav>
+        <div class="icons">
+            <button class="hamburger-icon">
+                <label for="dropdown">
+                    <i class="fa-solid fa-magnifying-glass" id="search-btn"></i>
+                    <i class="fa-solid fa-x" id="x-icon1"></i>
+                </label>
+                <input type="checkbox" id="dropdown" />
+            </button>
+            <i class="fa-solid fa-user" id="login-btn"></i>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+        </form>
+        <button class="hamburger-icon1">
+            <label for="dropdown1">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-x" id="x-icon"></i>
+            </label>
+            <input type="checkbox" id="dropdown1" />
+        </button> 
+    </header>
+
+<div class="container1">
+     <div class="container">
+    <form action="">
+    <h1>Login</h1>
+    <div class="bdn">
+        <input type="text" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+    </div>
+    <div class="bdn">
+        <input type="password" placeholder="password" required>
+        <i class='bx bxs-lock-alt'></i>
+    </div>
+    <div class="input-bdn">
+        <label><input type="checkbox" >Remember me</label>
+        <a href="#">Forgot password?</a>
+    </div>
+    <button type="submit" class="btn">Login</button>
+    <div class="register-link">
+        <p>Don't have an account? <a href="index.html">Register</a></p>
+    </div>
+    </form>
+</div> 
+</div>
+
+
+<footer class="footer">
+    <div class="box-container1">
+        <div class="box1">
+            <h3>about us</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nesciunt impedit dolorem voluptatum exercitationem veritatis vero quam autem corporis qui!</p>
+        </div>
+        <div class="box1">
+            <h3>branch location</h3>
+            <a href="#">india</a>
+            <a href="#">USA</a>
+            <a href="#">japan</a>
+            <a href="#">france</a>
+        </div>
+        <div class="box1">
+            <h3>quick links</h3>
+            <a href="index.html">home</a>
+            <a href="index.html">book</a>
+            <a href="index.html">packages</a>
+            <a href="index1.html">services</a>
+            <a href="index1.html">gallery</a>
+            <a href="index.html">contact</a>
+        </div>
+        <div class="box1">
+            <h3>follow us</h3>
+            <a href="https://facebook.com"target="_blank">facebook</a>
+            <a href="https://instagram.com"target="_blank">instagram</a>
+            <a href="https://twitter.com"target="_blank">twitter</a>
+            <a href="https://linkedin.com"target="_blank">linkedin</a>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>
